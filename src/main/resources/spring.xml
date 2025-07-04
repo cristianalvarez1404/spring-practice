@@ -5,13 +5,15 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="dev" class="com.telusko.Dev">
+    <bean id="dev" class="com.telusko.Dev" autowire="byType">
         <!--<property name="age" value="12"/> Only for setter-->
 <!--        <constructor-arg index="0" value="14"/>-->
 <!--        <constructor-arg index="1" value="14"/> if we have different parameters -->
 <!--        <property name="laptop" ref="lap1"/>-->
-        <constructor-arg ref="lap1"/>
+<!--        <constructor-arg ref="lap1"/>-->
+<!--        <property name="com" ref="lap1"/>-->
     </bean>
-    <bean id="lap1" class="com.telusko.Laptop"/>
+    <bean id="com" class="com.telusko.Laptop" primary="true"/>
+    <bean id="com1" class="com.telusko.Desktop"/>
 
 </beans>
